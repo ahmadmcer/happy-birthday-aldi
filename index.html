@@ -28,79 +28,88 @@
         display: none;
         text-align: center;
         padding: 20px;
-        background-color: #ffcccb;
-        color: #000;
+        background-color: #ffcccc;
+        color: #333;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       ">
+      <h2>Warning</h2>
       <p>
-        This experience is best viewed on a desktop or laptop. Please switch to
-        a larger screen for the best experience.
+        This page is best viewed on a desktop or laptop. Please switch to a
+        larger screen for the best experience.
       </p>
     </div>
 
-    <div id="box" class="box">
-      <div class="tape-horizontal"></div>
-      <div class="tape-vertical"></div>
-      <div class="ribbon" onclick="ribbonClick()">
-        <img src="assets/image/ribbon_blue.svg" />
+    <div id="content-wrapper">
+      <div id="box" class="box">
+        <div class="tape-horizontal"></div>
+        <div class="tape-vertical"></div>
+        <div class="ribbon" onclick="ribbonClick()">
+          <img src="assets/image/ribbon_blue.svg" />
+        </div>
       </div>
-    </div>
 
-    <div class="background-container">
-      <div class="background">
-        <img src="assets/image/background_shine_blue.png" />
+      <div class="background-container">
+        <div class="background">
+          <img src="assets/image/background_shine_blue.png" />
+        </div>
+        <div id="stars" class="stars"></div>
       </div>
-      <div id="stars" class="stars"></div>
-    </div>
 
-    <div class="content">
-      <img src="assets/image/aldi_ganteng.jpeg" onclick="moveStars()" />
-      <h2>Happy Birthday!</h2>
-      <h1>Aldi Kurnia Putra</h1>
-    </div>
+      <div class="content">
+        <img src="assets/image/aldi_ganteng.jpeg" onclick="moveStars()" />
+        <h2>Happy Birthday!</h2>
+        <h1>Aldi Kurnia Putra</h1>
+      </div>
 
-    <div class="gift-card-open">
-      <button onclick="openGiftCard()">
-        <i class="fas fa-gift fa-2x"></i>
-      </button>
-    </div>
-
-    <div class="credit">
-      <a href="https://ahmadmcer.github.io/" target="_blank">
-        <img src="assets/image/amc_icon.png" />
-      </a>
-    </div>
-
-    <div id="gift-card" class="gift-card">
-      <p>
-        Code of Celebration<br />For Mas Aldi Kurnia Putra<br /><br />
-        On this special branch in your life’s GitHub tree, A commit of joy, from
-        all of us, to thee. No bugs, no errors, just pure delight, May your code
-        compile with dreams so bright. In the IDE of life, you're our lead dev,
-        Pushing us forward with each pull request you give. With clean logic,
-        and a vision so wide, You're the framework where we all safely ride.
-        Your leadership is like a solid API, Simple to follow, yet reaching the
-        sky. Your wisdom debugs our fears away, And helps us deploy hope, day by
-        day.<br /><br />So here's a function for happiness true: def
-        celebrate(birthday):<br />
-        return blessings.to_you()<br /><br />Another version begins with cheer,
-        Happy Birthday, Mas Aldi -- our dev pioneer!
-        <button onclick="closeGiftCard()">
-          <i class="fas fa-times fa-3x fa-fw"></i>
+      <div class="gift-card-open">
+        <button onclick="openGiftCard()">
+          <i class="fas fa-gift fa-2x"></i>
         </button>
-      </p>
+      </div>
+
+      <div class="credit">
+        <a href="https://ahmadmcer.github.io/" target="_blank">
+          <img src="assets/image/amc_icon.png" />
+        </a>
+      </div>
+
+      <div id="gift-card" class="gift-card">
+        <p>
+          Code of Celebration<br />For Mas Aldi Kurnia Putra<br /><br />
+          On this special branch in your life’s GitHub tree, A commit of joy,
+          from all of us, to thee. No bugs, no errors, just pure delight, May
+          your code compile with dreams so bright. In the IDE of life, you're
+          our lead dev, Pushing us forward with each pull request you give. With
+          clean logic, and a vision so wide, You're the framework where we all
+          safely ride. Your leadership is like a solid API, Simple to follow,
+          yet reaching the sky. Your wisdom debugs our fears away, And helps us
+          deploy hope, day by day.<br /><br />So here's a function for happiness
+          true: def celebrate(birthday):<br />
+          return blessings.to_you()<br /><br />Another version begins with
+          cheer, Happy Birthday, Mas Aldi -- our dev pioneer!
+          <button onclick="closeGiftCard()">
+            <i class="fas fa-times fa-3x fa-fw"></i>
+          </button>
+        </p>
+      </div>
     </div>
 
-    <script type="text/javascript">
+    <script type="text/javascript" src="script.js"></script>
+    <script>
       function isMobileDevice() {
-        return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        return /Mobi|Android/i.test(navigator.userAgent);
       }
 
       window.onload = function () {
         if (isMobileDevice()) {
           document.getElementById("mobile-warning").style.display = "block";
+          document.getElementById("content-wrapper").style.display = "none";
         }
       };
     </script>
-    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
